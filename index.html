@@ -3,124 +3,177 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maximum Rectangle in an Ellipse – A Geometric Construction</title>
+    <title>A Geometric Construction for the Maximum Rectangle in an Ellipse</title>
+
     <style>
         body {
             font-family: Georgia, serif;
-            line-height: 1.6;
             margin: 0;
             padding: 0;
-            background: #f7f7f7;
+            background: #f4f4f4;
             color: #222;
+            line-height: 1.7;
         }
+
         header {
             background: #003366;
             color: white;
             padding: 40px 20px;
             text-align: center;
         }
+
         main {
             max-width: 900px;
-            margin: auto;
+            margin: 40px auto;
             background: white;
             padding: 40px;
+            border-radius: 8px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
+
         h1, h2 {
             color: #003366;
         }
+
+        .formula {
+            text-align: center;
+            font-size: 1.3em;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+
         img {
             display: block;
             margin: 30px auto;
             max-width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 6px;
         }
-        .footer {
+
+        footer {
             text-align: center;
             padding: 20px;
             color: #666;
-        }
-        code {
-            background: #eee;
-            padding: 2px 4px;
-            border-radius: 4px;
+            margin-top: 40px;
         }
     </style>
 </head>
+
 <body>
 
 <header>
-    <h1>Maximum Rectangle in an Ellipse</h1>
-    <h3>A Simple and Elegant Geometric Construction</h3>
+    <h1>A Geometric Construction for the Maximum Rectangle in an Ellipse</h1>
 </header>
 
 <main>
 
-    <h2>Introduction</h2>
+    <h2>1. Introduction</h2>
     <p>
-        The classical problem of finding the largest rectangle that can be inscribed in an ellipse 
-        is usually solved using calculus or affine transformations. 
-        This page presents a purely geometric construction that produces the maximal rectangle 
-        in a visually intuitive and elegant way.
+        The problem of finding the largest rectangle that can be inscribed in an ellipse is a classical one in geometry. 
+        While analytic methods using calculus or affine transformations are well known, this document presents a 
+        purely geometric construction that is both intuitive and visually elegant. 
+        The method relies on drawing diagonals across a bounding rectangle and identifying their intersections with the ellipse.
     </p>
 
-    <h2>The Ellipse and Its Bounding Rectangle</h2>
+    <h2>2. The Ellipse and Bounding Rectangle</h2>
     <p>
-        Consider the ellipse defined by:
+        Consider the ellipse defined by the equation:
     </p>
-    <p style="text-align:center; font-size: 1.2em;">
-        <strong>(x²)/(a²) + (y²)/(b²) = 1</strong>
-    </p>
+
+    <div class="formula">(x²)/(a²) + (y²)/(b²) = 1</div>
+
     <p>
-        The smallest axis-aligned rectangle that contains the ellipse has corners at 
-        <code>(±a, ±b)</code>. 
+        This ellipse is centered at the origin and has semi-major axis <strong>a</strong> along the x-axis 
+        and semi-minor axis <strong>b</strong> along the y-axis. 
+        We construct an axis-aligned rectangle that exactly bounds the ellipse. 
+        The corners of this rectangle are located at:
+    </p>
+
+    <div class="formula">(−a, −b), (−a, b), (a, b), (a, −b)</div>
+
+    <p>
         This rectangle will play a key role in the construction.
     </p>
 
-    <h2>The Diagonal Construction</h2>
+    <h2>3. Diagonal Construction</h2>
     <p>
-        Draw both diagonals of the bounding rectangle. 
-        These diagonals intersect the ellipse in exactly four points. 
-        Remarkably, these four points form the vertices of the largest possible 
-        axis-aligned rectangle inside the ellipse.
+        Next, we draw the two diagonals of the bounding rectangle: 
+        one from (−a, −b) to (a, b), and the other from (−a, b) to (a, −b). 
+        These diagonals intersect the ellipse in four points. 
+        These intersection points form the vertices of a new rectangle that is inscribed within the ellipse. 
+        This construction is purely geometric and does not require any algebraic optimization.
     </p>
 
     <img src="ellipse_diagram.png" alt="Ellipse with bounding rectangle, diagonals, and maximal inscribed rectangle">
 
+    <h2>4. Analytic Verification</h2>
     <p>
-        The intersection points occur at:
-    </p>
-    <p style="text-align:center; font-size: 1.2em;">
-        <strong>(±a/√2, ±b/√2)</strong>
+        To verify the construction analytically, consider the lines defined by the diagonals:
     </p>
 
-    <h2>Analytic Verification</h2>
+    <div class="formula">y = (b/a)x &nbsp;&nbsp;&nbsp; and &nbsp;&nbsp;&nbsp; y = −(b/a)x</div>
+
     <p>
-        Substituting the diagonal line <code>y = (b/a)x</code> into the ellipse equation gives:
-    </p>
-    <p style="text-align:center;">
-        2x²/a² = 1 → x = ±a/√2 → y = ±b/√2
-    </p>
-    <p>
-        These four points form a rectangle of width <code>a√2</code> and height <code>b√2</code>, 
-        giving area:
-    </p>
-    <p style="text-align:center; font-size: 1.2em;">
-        <strong>A = 2ab</strong>
+        Substituting <strong>y = (b/a)x</strong> into the ellipse equation yields:
     </p>
 
-    <h2>Conclusion</h2>
+    <div class="formula">
+        (x²)/(a²) + ((b/a)x)²/(b²) = 1  
+        <br>⇒ 2x²/a² = 1  
+        <br>⇒ x = ±a/√2  
+        <br>⇒ y = ±b/√2
+    </div>
+
     <p>
-        This geometric construction provides a simple and elegant way to identify the largest 
+        Thus, the intersection points are located at:
+    </p>
+
+    <div class="formula">(±a/√2, ±b/√2)</div>
+
+    <p>
+        These four points form a rectangle with side lengths <strong>a√2</strong> and <strong>b√2</strong>, 
+        giving an area of:
+    </p>
+
+    <div class="formula">A = a√2 × b√2 = 2ab</div>
+
+    <p>
+        To confirm that this is the maximum possible area for an axis-aligned rectangle inside the ellipse, 
+        we apply the AM–GM inequality. Let x and y be the half-lengths of the rectangle's sides. 
+        The constraint is:
+    </p>
+
+    <div class="formula">(x²)/(a²) + (y²)/(b²) ≤ 1</div>
+
+    <p>
+        Using AM–GM:
+    </p>
+
+    <div class="formula">
+        (x²)/(a²) + (y²)/(b²) ≥ 2√[(x²)/(a²) × (y²)/(b²)]  
+        <br>⇒ xy ≤ ab/2  
+        <br>⇒ Area ≤ 2ab
+    </div>
+
+    <p>
+        Equality occurs only when <strong>x = a/√2</strong> and <strong>y = b/√2</strong>, 
+        confirming that our construction yields the maximum.
+    </p>
+
+    <h2>5. Conclusion</h2>
+    <p>
+        This geometric construction provides a simple and elegant method for identifying the largest 
         axis-aligned rectangle that can be inscribed in an ellipse. 
-        It avoids calculus entirely and offers a visually intuitive method suitable for teaching, 
-        presentations, and mathematical outreach.
+        By using the diagonals of the bounding rectangle, we obtain the optimal rectangle without resorting 
+        to calculus or coordinate transformations. 
+        This approach offers a visually intuitive alternative that may be especially useful in educational settings.
     </p>
 
 </main>
 
-<div class="footer">
+<footer>
     © 2025 Hans — Geometric Insights Project
-</div>
+</footer>
 
 </body>
 </html>
