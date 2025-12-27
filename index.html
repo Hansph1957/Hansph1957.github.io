@@ -162,6 +162,59 @@
         Equality occurs only when <strong>x = a/√2</strong> and <strong>y = b/√2</strong>, 
         confirming that our construction yields the maximum.
     </p>
+<h3>Explanation of the AM–GM Inequality</h3>
+<p>
+    The AM–GM inequality is a classical result in mathematics stating that for any two positive numbers 
+    <em>u</em> and <em>v</em>, the arithmetic mean is always greater than or equal to the geometric mean:
+</p>
+
+<div class="formula">
+    (u + v)/2 ≥ √(uv)
+</div>
+
+<p>
+    Equality holds only when <em>u = v</em>. In the context of the ellipse problem, we apply this inequality 
+    to the two positive quantities 
+    <strong>x²/a²</strong> and <strong>y²/b²</strong>. Since the point <em>(x, y)</em> lies inside the ellipse, 
+    these two terms satisfy the constraint:
+</p>
+
+<div class="formula">
+    (x²)/(a²) + (y²)/(b²) ≤ 1
+</div>
+
+<p>
+    By AM–GM, we have:
+</p>
+
+<div class="formula">
+    (x²)/(a²) + (y²)/(b²) ≥ 2√[(x²)/(a²) · (y²)/(b²)]
+</div>
+
+<p>
+    Rearranging this expression gives:
+</p>
+
+<div class="formula">
+    xy ≤ ab/2
+</div>
+
+<p>
+    Since the area of the inscribed rectangle is <strong>A = 4xy</strong>, the inequality above implies:
+</p>
+
+<div class="formula">
+    A ≤ 2ab
+</div>
+
+<p>
+    This shows that no axis-aligned rectangle inside the ellipse can have area greater than <strong>2ab</strong>. 
+    Moreover, equality occurs only when the two terms 
+    <strong>x²/a²</strong> and <strong>y²/b²</strong> are equal, which leads to the specific values 
+    <strong>x = a/√2</strong> and <strong>y = b/√2</strong>. 
+    These are exactly the coordinates obtained from the geometric diagonal construction, confirming that 
+    the construction indeed produces the rectangle of maximum area.
+</p>
 
     <h2>5. Conclusion</h2>
     <p>
@@ -180,6 +233,7 @@
 
 </body>
 </html>
+
 
 
 
